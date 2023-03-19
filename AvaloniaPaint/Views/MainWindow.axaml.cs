@@ -22,7 +22,9 @@ namespace AvaloniaPaint.Views
                     Name = "Xml files",
                     Extensions = new string[] {"xml"}.ToList()
                 });
+
             string? path = await saveFileDialog.ShowAsync(this);
+
             if (path != null)
             {
                 if(this.DataContext is MainWindowViewModel dataContext)

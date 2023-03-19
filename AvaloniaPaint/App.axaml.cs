@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using AvaloniaPaint.Models.Serializer;
 using AvaloniaPaint.ViewModels;
 using AvaloniaPaint.Views;
 
@@ -19,7 +20,13 @@ namespace AvaloniaPaint
             {
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new MainWindowViewModel(),
+                    DataContext = new MainWindowViewModel()
+                    {
+                        SaverLoaderFactoryCollection = new ISaverLoaderFactory[]
+                        {
+                            new XMLSaverLoaderFactory(),
+                        }
+                    }
                 };
             }
 
