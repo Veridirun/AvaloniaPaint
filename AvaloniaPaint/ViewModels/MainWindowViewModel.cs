@@ -9,6 +9,9 @@ using AvaloniaPaint.Models;
 using System.Reactive;
 using static System.Net.Mime.MediaTypeNames;
 using System.Reactive.Linq;
+using System.Runtime.CompilerServices;
+using AvaloniaPaint.Models.Serializer;
+using System.Linq;
 
 namespace AvaloniaPaint.ViewModels
 {
@@ -95,5 +98,17 @@ namespace AvaloniaPaint.ViewModels
         public ReactiveCommand<Unit, PaintBaseFigure> buttonAdd { get; }
         public ReactiveCommand<Unit, Unit> buttonClear { get; }
         public ReactiveCommand<PaintBaseFigure, Unit> buttonRemove { get; }
+        
+        public IEnumerable<ISaverLoaderFactory> SaverLoaderFactoryCollection { get; set; }
+        public void SaveFigures(string path)
+        {
+            var figureSaver = SaverLoaderFactoryCollection
+                .FirstOrDefault(factory => factory.IsMatch(path) == true)?
+                .CreateSaver();
+            if (figureSaver != null)
+            {
+                figureSaver.Save(FigureCollection, path);
+            }
+        }
     }
 }

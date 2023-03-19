@@ -22,8 +22,15 @@
     
 	<Grid ShowGridLines="True" RowDefinitions="29, *" >
 		<DockPanel Grid.Row="0">
-    		<Button Name="menuExport" Content="Экспортировать"></Button>
-    		<Button Name="menuImport" Content="Импортировать"></Button>
+			<Menu Name="menuExport" DockPanel.Dock="Top">
+				<MenuItem Header="_Экспортировать">
+					<MenuItem Header="_XML" Click="OnExportMenuClick"/>
+					<MenuItem Header="_JSON"/>
+					<Separator/>
+					<MenuItem Header="_Закрыть"/>
+				</MenuItem>
+			</Menu>
+
 		</DockPanel>
 
 		<Grid ShowGridLines="{Binding $parent.ShowGridLines}" Grid.Row="1" ColumnDefinitions="0.4*, *, 0.3*">

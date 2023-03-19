@@ -9,6 +9,6 @@ namespace AvaloniaPaint.Models.Serializer
 {
     public interface IShapeLoader
     {
-        void Save(IEnumerable<PaintBaseFigure> figures, string path);
+        void Load(IEnumerable<PaintBaseFigure> figures, string path);
     }
 }

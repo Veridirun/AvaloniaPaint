@@ -8,7 +8,7 @@ namespace AvaloniaPaint.Models.Serializer
 {
     public class XMLLoader : IShapeLoader
     {
-        public void Save(IEnumerable<PaintBaseFigure> figures, string path)
+        public void Load(IEnumerable<PaintBaseFigure> figures, string path)
         {
             throw new NotImplementedException();
         }
