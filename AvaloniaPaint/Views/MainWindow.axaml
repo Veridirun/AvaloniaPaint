@@ -17,6 +17,7 @@
 	<Window.Resources>
 		<local:ColorConverter x:Key="colorConverter"/>
 		<local:DoubleIntConverter x:Key="doubleIntConverter"/>
+		<local:GeometryParser x:Key="geometryParser"/>
 	</Window.Resources>
     
 	<Grid ShowGridLines="True" RowDefinitions="29, *" >
@@ -108,7 +109,7 @@
 						<Path
 							  Stroke="{Binding Stroke, Converter={StaticResource colorConverter}}"
 							  StrokeThickness="{Binding StrokeThickness}"
-							  Data="{Binding Data}"
+							  Data="{Binding Data, Converter={StaticResource geometryParser}}"
 							  Fill="{Binding FillColor, Converter={StaticResource colorConverter}}">
 						</Path>
 					</DataTemplate>
