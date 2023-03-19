@@ -56,6 +56,7 @@
 		<NumericUpDown Name="numericUpDownStroke" Classes="s1" Grid.Row="4" Grid.Column="1" Minimum="1" Maximum="15" Increment="1"
                        VerticalAlignment="Center"
                        Value="{Binding StrokeThickness}"/>
+		
 		<!--	<Rectangle Grid.Row="5" Fill="{Binding SelectedColor, Converter={StaticResource colorConverter}}" Height="50" Width="200"></Rectangle> 
 		-->
 	</Grid>

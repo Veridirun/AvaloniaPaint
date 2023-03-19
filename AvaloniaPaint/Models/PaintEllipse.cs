@@ -1,15 +1,14 @@
-﻿using System;
+﻿using Avalonia;
+using Avalonia.Media;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Avalonia;
-using Avalonia.Media;
-using SkiaSharp;
 
 namespace AvaloniaPaint.Models
 {
-    public class PaintRectangle : PaintBaseFigure
+    public class PaintEllipse : PaintBaseFigure
     {
         private int height;
         public int Height
@@ -18,7 +17,7 @@ namespace AvaloniaPaint.Models
             set => height = value;
         }
         private int width;
-        public int Width 
+        public int Width
         {
             get => width;
             set => width = value;

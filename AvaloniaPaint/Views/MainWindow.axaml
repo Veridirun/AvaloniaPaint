@@ -79,12 +79,38 @@
 					</DataTemplate>
 
 					<DataTemplate DataType="{x:Type	models:PaintRectangle}">
-						<Rectangle Canvas.Left="60" 
-								   Canvas.Top="60"
+						<Rectangle 
 							  Stroke="{Binding Stroke, Converter={StaticResource colorConverter}}"
 							  StrokeThickness="{Binding StrokeThickness}"
 							  Width="{Binding Width}" Height="{Binding Height}"
-							  Fill="{Binding FillColor, Converter={StaticResource colorConverter}}"/>
+							  Fill="{Binding FillColor, Converter={StaticResource colorConverter}}">
+							<Rectangle.RenderTransform>
+								<TranslateTransform X="{Binding StartPoint.X, Converter={StaticResource doubleIntConverter}}"
+													Y="{Binding StartPoint.Y, Converter={StaticResource doubleIntConverter}}"/>
+							</Rectangle.RenderTransform>
+						</Rectangle>
+					</DataTemplate>
+
+					<DataTemplate DataType="{x:Type	models:PaintEllipse}">
+						<Ellipse
+							  Stroke="{Binding Stroke, Converter={StaticResource colorConverter}}"
+							  StrokeThickness="{Binding StrokeThickness}"
+							  Width="{Binding Width}" Height="{Binding Height}"
+							  Fill="{Binding FillColor, Converter={StaticResource colorConverter}}">
+							<Ellipse.RenderTransform>
+								<TranslateTransform X="{Binding StartPoint.X, Converter={StaticResource doubleIntConverter}}"
+													Y="{Binding StartPoint.Y, Converter={StaticResource doubleIntConverter}}"/>
+							</Ellipse.RenderTransform>
+						</Ellipse>
+					</DataTemplate>
+
+					<DataTemplate DataType="{x:Type	models:PaintPath}">
+						<Path
+							  Stroke="{Binding Stroke, Converter={StaticResource colorConverter}}"
+							  StrokeThickness="{Binding StrokeThickness}"
+							  Data="{Binding Data}"
+							  Fill="{Binding FillColor, Converter={StaticResource colorConverter}}">
+						</Path>
 					</DataTemplate>
 					
 				</ItemsControl.DataTemplates>

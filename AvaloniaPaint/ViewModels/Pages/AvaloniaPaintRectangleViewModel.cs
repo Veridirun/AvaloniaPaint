@@ -121,8 +121,7 @@ namespace AvaloniaPaint.ViewModels.Pages
                     return new PaintRectangle()
                     {
                         Name = Name,
-                        StartPointTop = (int)StartPoint.Y,
-                        StartPointLeft = (int)StartPoint.X,
+                        StartPoint = StartPoint,
                         Stroke = SelectedColor.Color,
                         FillColor = SelectedFillColor.Color,
                         StrokeThickness = StrokeThickness,
